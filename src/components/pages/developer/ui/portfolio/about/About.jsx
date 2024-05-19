@@ -87,6 +87,7 @@ const About = () => {
 											</li>
 										))}
 									</ul>
+									
 									<button className='w-[66%] btn btn--yellow md:btn-yellow-cv rounded-br-xl  flex justify-center md:self-start self-center  text-center rounded-bl-xl'>
 										<Link className='flex flex-row items-center gap-5'>
 											Download CV <PiDownloadSimpleFill className='text-2xl' />
