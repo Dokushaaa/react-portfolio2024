@@ -1,0 +1,62 @@
+RewriteEngine On
+# use for authentication
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+Header set Access-Control-Allow-Origin *
+
+#################################### ALL FOR DEVELOPER #################################
+
+### SETTING ROLES ###
+# for hero table
+RewriteRule ^hero$ controllers/hero/hero.php [L]
+RewriteRule ^hero/([0-9]+)$ controllers/hero/hero.php?heroid=$1 [L]
+RewriteRule ^hero/active/([0-9]+)$ controllers/hero/active.php?heroid=$1 [L]
+RewriteRule ^hero/search$ controllers/hero/search.php [L]
+RewriteRule ^upload/photo$ core/upload-photo.php [L]
+
+# for about table
+RewriteRule ^about$ controllers/about/about.php [L]
+RewriteRule ^about/([0-9]+)$ controllers/about/about.php?aboutid=$1 [L]
+RewriteRule ^about/active/([0-9]+)$ controllers/about/active.php?aboutid=$1 [L]
+RewriteRule ^about/search$ controllers/about/search.php [L]
+
+# for contacts table
+RewriteRule ^contacts$ controllers/contacts/contacts.php [L]
+RewriteRule ^contacts/([0-9]+)$ controllers/contacts/contacts.php?contactsid=$1 [L]
+RewriteRule ^contacts/active/([0-9]+)$ controllers/contacts/active.php?contactsid=$1 [L]
+RewriteRule ^contacts/search$ controllers/contacts/search.php [L]
+
+# for about table
+RewriteRule ^about$ controllers/about/about.php [L]
+RewriteRule ^about/([0-9]+)$ controllers/about/about.php?aboutid=$1 [L]
+RewriteRule ^about/active/([0-9]+)$ controllers/about/active.php?aboutid=$1 [L]
+RewriteRule ^about/search$ controllers/about/search.php [L]
+
+# for proglang table
+RewriteRule ^proglang$ controllers/proglang/proglang.php [L]
+RewriteRule ^proglang/([0-9]+)$ controllers/proglang/proglang.php?proglangid=$1 [L]
+RewriteRule ^proglang/active/([0-9]+)$ controllers/proglang/active.php?proglangid=$1 [L]
+RewriteRule ^proglang/search$ controllers/proglang/search.php [L]
+
+# for projects table
+RewriteRule ^projects$ controllers/projects/projects.php [L]
+RewriteRule ^projects/([0-9]+)$ controllers/projects/projects.php?projectsid=$1 [L]
+RewriteRule ^projects/active/([0-9]+)$ controllers/projects/active.php?projectsid=$1 [L]
+RewriteRule ^projects/search$ controllers/projects/search.php [L]
+
+# for certs table
+RewriteRule ^certs$ controllers/certs/certs.php [L]
+RewriteRule ^certs/([0-9]+)$ controllers/certs/certs.php?certsid=$1 [L]
+RewriteRule ^certs/active/([0-9]+)$ controllers/certs/active.php?certsid=$1 [L]
+RewriteRule ^certs/search$ controllers/certs/search.php [L]
+
+# for background table
+RewriteRule ^background$ controllers/background/background.php [L]
+RewriteRule ^background/([0-9]+)$ controllers/background/background.php?backgroundid=$1 [L]
+RewriteRule ^background/active/([0-9]+)$ controllers/background/active.php?backgroundid=$1 [L]
+RewriteRule ^background/search$ controllers/background/search.php [L]
+
+

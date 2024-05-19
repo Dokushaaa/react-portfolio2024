@@ -1,0 +1,1 @@
+CREATE TABLE `react_portfoliomain`.`tbl_hero` (`hero_aid` INT NOT NULL AUTO_INCREMENT , `hero_title` TEXT NOT NULL , `hero_description` TEXT NOT NULL , `hero_image` TEXT NOT NULL , `hero_is_active` BOOLEAN NOT NULL , `hero_published_date` VARCHAR(50) NOT NULL , `hero_created` VARCHAR(50) NOT NULL , `hero_datetime` VARCHAR(50) NOT NULL , PRIMARY KEY (`hero_aid`)) ENGINE = InnoDB; 
