@@ -316,6 +316,10 @@
 		@apply bg-yellow border-2 border-yellow text-white hover:bg-yellow/70 hover:border-content rounded-full transition-all duration-500
 	}
 
+	.btn--outline {
+		@apply bg-secondary border-2 border-secondary hover:bg-transparent hover:border-secondary;
+	}
+
 	.btn-footer {
 		@apply bg-yellow text-primary text-content hover:text-yellow border-2 border-yellow rounded-bl-xl rounded-tr-xl hover:border-secondary md:hover:text-primary hover:bg-content;
 	}

@@ -1,0 +1,26 @@
+    TODO : delete system:
+    read login
+    public function readLogin()
+    {
+        try {
+            $sql = "select user.user_system_aid, ";
+            $sql .= "user.user_system_is_active, ";
+            $sql .= "user.user_system_fname, ";
+            $sql .= "user.user_system_lname, ";
+            $sql .= "user.user_system_email, ";
+            $sql .= "user.user_system_password, ";
+            $sql .= "role.* ";
+            $sql .= "from {$this->tblUserSystem} as user, ";
+            $sql .= "{$this->tblRole} as role ";
+            $sql .= "where user.user_system_role_id = role.role_aid ";
+            $sql .= "and user.user_system_email like :user_system_email ";
+            $sql .= "and user.user_system_is_active = 1 ";
+            $query = $this->connection->prepare($sql);
+            $query->execute([
+                "user_system_email" => $this->user_system_email,
+            ]);
+        } catch (PDOException $ex) {
+            $query = false;
+        }
+        return $query;
+    }

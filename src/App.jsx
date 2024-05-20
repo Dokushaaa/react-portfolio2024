@@ -7,6 +7,9 @@ import { StoreProvider } from "./store/StoreContext";
 import DashboardHome from "./components/pages/developer/dashboard/database_management/DashboardHome";
 import HeroHome from "./components/pages/developer/dashboard/database_management/HeroDb/HeroHome";
 import Home from "./components/pages/developer/ui/portfolio/home/Home";
+import Login from "./components/pages/developer/access/Login";
+import ForgotPassword from "./components/pages/developer/access/ForgotPassword";
+import CreatePassword from "./components/pages/developer/access/CreatePassword";
 const NotFound = () => {
 	return (
 		<>
@@ -67,6 +70,18 @@ function App() {
 							<Route
 								path='/dashboard'
 								element={<DashboardHome />}
+							/>
+							<Route
+								path='/login'
+								element={<Login />}
+							/>
+							<Route
+								path='/forgot-password'
+								element={<ForgotPassword />}
+							/>
+							<Route
+								path='/create-password'
+								element={<CreatePassword />}
 							/>
 						</Routes>
 					</Router>

@@ -4,7 +4,7 @@ export const devBaseImgUrl = "http://localhost/react-portfolio2024/public/img/";
 export const baseImgUrl = "../../../public/img";
 export const ImgUrl = "../../../public";
 //const baseImgUrl = 'http://
-export const urlPathPortfolioKey = "http://localhost/react-portfolio2024";
+export const urlPathPortfolioKey = "http://localhost/react-portfolio2024demo";
 export const devApiUrl = `${urlPathPortfolioKey}/rest`;
 export const devKey =
 	"$2a$12$47wDvbLInZif/PVS8B6P3.7WxyJvUpBzZAWCsnWJUKq3nrn4qgmeO";
