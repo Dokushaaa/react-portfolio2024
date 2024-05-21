@@ -59,4 +59,17 @@ RewriteRule ^background/([0-9]+)$ controllers/background/background.php?backgrou
 RewriteRule ^background/active/([0-9]+)$ controllers/background/active.php?backgroundid=$1 [L]
 RewriteRule ^background/search$ controllers/background/search.php [L]
 
+# { for user table
+# basic user table exec
+RewriteRule ^user$ controllers/user/user.php [L]
+RewriteRule ^user/([0-9]+)$ controllers/user/user.php?userid=$1 [L]
+RewriteRule ^user/active/([0-9]+)$ controllers/user/active.php?userid=$1 [L]
+RewriteRule ^user/search$ controllers/user/search.php [L]
+# for password management
+RewriteRule ^user/password$ controllers/user/set-password.php [L]
+RewriteRule ^user/reset$ controllers/user/reset-password.php [L]
+# for login
+RewriteRule ^user/login$ controllers/user/login.php [L]
+RewriteRule ^user/token$ controllers/user/token.php [L]
+# }
 

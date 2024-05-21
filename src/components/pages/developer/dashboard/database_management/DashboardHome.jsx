@@ -90,10 +90,10 @@ const DashboardHome = () => {
 				pageHandler={pageHandler}
 				setPageHanlder={setPageHanlder}
 			/>
-			<main className='w-[calc(100%-250px)]'>
+			<main className='w-[calc(100%-250px)] '>
 				<DbHeader />
-				<div className='flex relative'>
-					<div className={`main-wrapper transition-all px-4 py-3 w-full`}>
+				<div className='flex flex-row items-center'>
+					<div className={`main-wrapper  transition-all px-4 py-3 w-full`}>
 						<div className='flex justify-between items-center'>
 							<h1 className='leading-none mb-0'>{pageHandler}</h1>
 							<button className='btn btn--accent'>
@@ -129,6 +129,8 @@ const DashboardHome = () => {
 											hero?.data.length === 0 ? "text-red-400" : "text-accent"
 										}`}>
 										{hero?.data.length}
+										{/* <br /> <br /> */}
+										{/* {hero?.data.map((item, key) => key == 0 && item.hero_title)} */}
 									</span>
 								</p>
 								<small className='underline text-stone-500'>

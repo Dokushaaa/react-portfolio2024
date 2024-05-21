@@ -10,25 +10,9 @@ import Home from "./components/pages/developer/ui/portfolio/home/Home";
 import Login from "./components/pages/developer/access/Login";
 import ForgotPassword from "./components/pages/developer/access/ForgotPassword";
 import CreatePassword from "./components/pages/developer/access/CreatePassword";
-const NotFound = () => {
-	return (
-		<>
-			<div className='404pager'>
-				<div className='flex flex-col justify-center items-center h-screen'>
-					<h1 className='text-accent text-3xl'>
-						<span className='italic'>404</span> - Page Not Found
-					</h1>
-					<p>Sorry, the page you are looking for could not be found.</p>
-					<img
-						src='/public/404.gif'
-						alt='ducking-around'
-						className='size-[20rem] transition-all rounded-md border-2 border-gradient-to-r from-blue-500 to-purple-500'
-					/>
-				</div>
-			</div>
-		</>
-	);
-};
+import UsersHome from "./components/pages/developer/dashboard/database_management/Users/UsersHome";
+import PageNotFound from "./components/partials/PageNotFound";
+import ProtectedRoute from "./components/pages/developer/access/ProtectedRoute";
 
 function App() {
 	const queryClient = new QueryClient();
@@ -39,17 +23,26 @@ function App() {
 					{" "}
 					<Router>
 						<Routes>
+							{/* <Route
+								path='*'
+								element={<PageNotFound />}
+							/> */}
+							<Route
+								path='/*'
+								element={<PageNotFound />}
+							/>
 							<Route
 								path='/home'
 								element={<Home />}
 							/>
+
 							<Route
-								path='*'
-								element={<NotFound />}
-							/>
-							<Route
-								path='/admin'
-								element={<DashboardHome />}
+								path='/dashboard'
+								element={
+									<ProtectedRoute>
+										<DashboardHome />
+									</ProtectedRoute>
+								}
 							/>
 							<Route
 								path='/HeroDb'
@@ -68,9 +61,10 @@ function App() {
 								element={<ContactsHome />}
 							/>
 							<Route
-								path='/dashboard'
-								element={<DashboardHome />}
+								path='/users'
+								element={<UsersHome />}
 							/>
+
 							<Route
 								path='/login'
 								element={<Login />}

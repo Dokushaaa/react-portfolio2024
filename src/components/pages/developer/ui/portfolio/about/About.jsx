@@ -11,6 +11,7 @@ import useQueryData from "../../../../../custom-hook/useQueryData";
 
 const About = () => {
 	const socials = [
+	
 		<FaFacebook />,
 		<FaInstagram />,
 		<FaLinkedin />,
@@ -87,7 +88,7 @@ const About = () => {
 											</li>
 										))}
 									</ul>
-									
+
 									<button className='w-[66%] btn btn--yellow md:btn-yellow-cv rounded-br-xl  flex justify-center md:self-start self-center  text-center rounded-bl-xl'>
 										<Link className='flex flex-row items-center gap-5'>
 											Download CV <PiDownloadSimpleFill className='text-2xl' />
@@ -98,6 +99,8 @@ const About = () => {
 						))}
 					</div>
 				</div>
+				{/* todo:github calendar */}
+				{/* <div class='calendar'>Loading the data just for you.</div> */}
 			</section>
 		</>
 	);

@@ -1,6 +1,3 @@
-// make localhost img folder reciever:
-export const devBaseImgUrl = "http://localhost/react-portfolio2024/public/img/";
-
 export const baseImgUrl = "../../../public/img";
 export const ImgUrl = "../../../public";
 //const baseImgUrl = 'http://
@@ -9,6 +6,10 @@ export const devApiUrl = `${urlPathPortfolioKey}/rest`;
 export const devKey =
 	"$2a$12$47wDvbLInZif/PVS8B6P3.7WxyJvUpBzZAWCsnWJUKq3nrn4qgmeO";
 
+// for img upload
+// make localhost img folder reciever:
+export const devBaseImgUrl =
+	"http://localhost/react-portfolio2024demo/public/img/";
 // fetch for uploading photo or file
 export const fetchFormData = (url, fd = {}) => {
 	const data = fetch(url, {
@@ -22,7 +23,27 @@ export const fetchFormData = (url, fd = {}) => {
 
 	return data;
 };
-// to use img at a div
-// { `${devBaseImgUrl}/${item.(tableName)_(tableContent) }`}
-// or
-// { `${devBaseImgUrl}/${item.home_mainImg}`}
+
+// for search
+// get the url id parameter
+export const getUrlParam = () => {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	return urlParams;
+};
+
+// for login
+export const checkLocalStorage = () => {
+	let glatoken = null;
+	try {
+		glatoken = JSON.parse(localStorage.getItem("glatoken"));
+	} catch (error) {
+		glatoken = null;
+	}
+
+	return glatoken;
+};
+
+export function setStorageRoute(jwt) {
+	localStorage.setItem("glatoken", JSON.stringify({ token: jwt }));
+}

@@ -24,18 +24,19 @@ $user->user_datetime = date("Y-m-d H:i:s");
 
 $password_link = "/create-password";
 // check email
-isEmailExist($user, $user->user_email);
+// isEmailExist($user, $user->user_email);
 // send email notification
+
+// email sender
 sendEmail(
     $password_link,
     $user->user_name,
     $user->user_email,
     $user->user_key,
-
 );
 // create
 $query = checkCreate($user);
-checkCreateAccount($user);
+// checkCreateAccount($user);
 
 
 

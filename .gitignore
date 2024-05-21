@@ -17,6 +17,8 @@ rest/v1/jwt
 rest/v1/notification/PHPMailer
 rest/v1/notification/mail-config.php
 
+.gitignore
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

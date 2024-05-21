@@ -151,6 +151,26 @@
 		}
 	}
 
+	.input-wrapper {
+		@apply mb-3 relative;
+
+		label {
+			@apply mb-1 block text-xs;
+		}
+
+		input,
+		select,
+		textarea {
+			@apply block w-full p-1 rounded-md border-2 text-stone-900 focus:border-info focus:bg-primary focus:text-content;
+
+
+		}
+
+		small {
+			@apply absolute top-0 right-1 text-alert italic text-xs;
+		}
+	}
+
 	.form-action {
 		@apply flex gap-2 justify-end items-center w-full;
 	}
@@ -421,7 +441,8 @@ input::-webkit-inner-spin-button {
 @keyframes loading2sm {
 
 	/* "0%": { transform: "translateX(-100%)" }, */
-	0% {
+	0%,
+	100% {
 		transform: translateX(-2.5%);
 	}
 
@@ -429,24 +450,22 @@ input::-webkit-inner-spin-button {
 		transform: translateX(2.5%);
 	}
 
+	/* 
 	100% {
-		transform: translateX(0%);
-	}
+		transform: translateX(-2.5%);
+	} */
 }
 
 @keyframes loading2md {
 
 	/* "0%": { transform: "translateX(-100%)" }, */
-	0% {
+	0%,
+	100% {
 		transform: translateX(-2.5%);
 	}
 
 	50% {
 		transform: translateX(10%);
-	}
-
-	100% {
-		transform: translateX(5%);
 	}
 }
 

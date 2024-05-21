@@ -12,8 +12,10 @@ module.exports = {
 	settings: { react: { version: "18.2" } },
 	plugins: ["react-refresh"],
 	rules: {
-		"eslint-disable no-mixed-spaces-and-tabs ": "0",
+		"eslint-disable react/jsx-key": "true",
+		"eslint-disable no-mixed-spaces-and-tabs ": 0,
 		"no-unused-vars": "off",
+		"no-undef": "off",
 		"react/prop-types": "off",
 		"react/jsx-no-target-blank": "off",
 		"react-refresh/only-export-components": [

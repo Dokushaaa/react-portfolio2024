@@ -16,6 +16,7 @@ function sendEmail($password_link, $name, $email, $key)
     $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host = 'mail.frontlinebusiness.com.ph'; // if siteground
+    // if change to gmail 'mail.gmail.com'
     $mail->Port = 465;
     $mail->SMTPSecure = "ssl";
     $mail->SMTPAuth = true;

@@ -80,6 +80,16 @@ export const StoreReducer = (state, action) => {
 				...state,
 				isFetching: action.payload,
 			};
+		case "IS_LOGIN":
+			return {
+				...state,
+				isLogin: action.payload,
+			};
+		case "CREDENTIALS":
+			return {
+				...state,
+				credentials: action.payload,
+			};
 
 		default:
 			return state;

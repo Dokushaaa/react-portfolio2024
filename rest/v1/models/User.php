@@ -10,6 +10,8 @@ Class User {
     public $user_created;
     public $user_datetime;
 
+    public $user_search;
+
     public $connection;
     public $lastInsertedId;
     public $tbluser;
@@ -23,14 +25,14 @@ Class User {
              $sql = "insert into {$this->tbluser} ";
              $sql .= "( user_name, ";
              $sql .= "user_email, ";
-             $sql .= "user_password, ";
+            //  $sql .= "user_password, ";
              $sql .= "user_is_active, ";
              $sql .= "user_key, ";
              $sql .= "user_created, ";
              $sql .= "user_datetime ) values ( ";
              $sql .= ":user_name, ";
              $sql .= ":user_email, ";
-             $sql .= ":user_password, ";
+            //  $sql .= ":user_password, ";
              $sql .= ":user_is_active, ";
              $sql .= ":user_key, ";
              $sql .= ":user_created, ";
@@ -39,7 +41,7 @@ Class User {
              $query->execute([
                 "user_name" => $this->user_name,
                 "user_email" => $this->user_email,
-                "user_password" => $this->user_password,
+                // "user_password" => $this->user_password,
                 "user_is_active" => $this->user_is_active,
                 "user_key" => $this->user_key,
                 "user_email" => $this->user_email,
@@ -192,7 +194,24 @@ Class User {
         }
         return $query;
     }
-
+        public function search()
+    {
+        try {
+            $sql = "select ";
+            $sql .= "* ";
+            $sql .= "from {$this->tbluser} ";
+            $sql .= "where user_name like :user_name ";
+            $sql .= "order by user_is_active desc, ";
+            $sql .= "user_name asc ";
+            $query = $this->connection->prepare($sql);
+            $query->execute([
+                "user_name" => "%{$this->user_search}%",
+            ]);
+        } catch (PDOException $ex) {
+            $query = false;
+        }
+        return $query;
+    }
 
     
 }
